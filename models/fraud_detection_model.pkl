@@ -1,0 +1,21 @@
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+import joblib
+
+# Load your dataset
+data = pd.read_csv('your_dataset.csv')
+
+# Preprocessing and feature selection
+X = data[['feature1', 'feature2', 'feature3']]  # Replace with your features
+y = data['label']  # Replace with your target variable
+
+# Split the dataset
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Train the model
+model = RandomForestClassifier()
+model.fit(X_train, y_train)
+
+# Save the trained model to a .pkl file
+joblib.dump(model, 'fraud_detection_model.pkl')
