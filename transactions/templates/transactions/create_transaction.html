@@ -1,6 +1,17 @@
+{% extends 'base.html' %}
+{% block css %}
+<style>
+  .container{
+    min-height: 15y0vh;
+  }
+</style>
+{% endblock css %}
+{% block content %}
 <h2>Create Transaction</h2>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Create Transaction</button>
 </form>
+
+{% endblock %}

@@ -19,6 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('transactions/', include('transactions.urls')),
+    path('', include('transactions.urls')),  # Include the URLs from the transactions app
 ]
 

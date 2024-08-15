@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block css %}
+<style>
+  .container{
+    min-height: 15y0vh;
+  }
+</style>
+{% endblock css %}
+{% block content %}
+<h2>Transaction List</h2>
+<ul>
+    {% for transaction in transactions %}
+        <li>
+            <a href="{% url 'transaction_detail' transaction.pk %}">{{ transaction.transaction_id }}</a> - {{ transaction.amount }}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
