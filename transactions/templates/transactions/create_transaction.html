@@ -1,17 +1,30 @@
 {% extends 'base.html' %}
+
 {% block css %}
 <style>
-  .container{
-    min-height: 15y0vh;
+  .container {
+    min-height: 75vh;
   }
 </style>
 {% endblock css %}
-{% block content %}
-<h2>Create Transaction</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Create Transaction</button>
-</form>
 
+{% block content %}
+<div class="container">
+    <h2>Create Transaction</h2>
+
+    {% if messages %}
+        <div class="alert alert-dismissible fade show {% if messages.tags == 'error' %}alert-danger{% else %}alert-success{% endif %}" role="alert">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endif %}
+
+    <form method="post" class="form-group">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Create Transaction</button>
+    </form>
+</div>
 {% endblock %}

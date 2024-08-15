@@ -1,17 +1,20 @@
 {% extends 'base.html' %}
-
+{% block title %}Transaction Detail{% endblock %}
 {% block content %}
-<h2>Transaction Detail</h2>
-<p>Transaction ID: {{ transaction.transaction_id }}</p>
-<p>Amount: {{ transaction.amount }}</p>
-<p>Date: {{ transaction.date }}</p>
-<p>Location: {{ transaction.location }}</p>
-<p>Merchant: {{ transaction.merchant }}</p>
-<p>Fraud: {{ transaction.is_fraud }}</p>
+    <h2>Transaction Detail</h2>
+    <p>Transaction ID: {{ transaction.transaction_id }}</p>
+    <p>Amount: {{ transaction.amount }}</p>
+    <p>Date: {{ transaction.date }}</p>
+    <p>Location: {{ transaction.location }}</p>
+    <p>Merchant: {{ transaction.merchant }}</p>
+    <p>Fraud: {{ transaction.is_fraud }}</p>
 
-{% if fraud_result %}
-    <p>Fraud Prediction: {{ fraud_result }}</p>
-{% endif %}
+    {% if transaction.is_fraudulent %}
+        <div class="alert alert-danger">This transaction has been flagged as potentially fraudulent.</div>
+    {% else %}
+        <div class="alert alert-success">This transaction is safe.</div>
+    {% endif %}
 
-<a href="{% url 'predict_fraud' transaction.pk %}">Run Fraud Detection</a>
+
+    <a href="{% url 'transaction_list' %}" class="btn btn-primary">Back to Transactions</a>
 {% endblock %}

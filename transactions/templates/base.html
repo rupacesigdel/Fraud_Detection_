@@ -7,10 +7,8 @@
     <title>{% block title %}Fraud Detection System{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'transactions/styles.css' %}">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    {% block extra_head %}
-    {% endblock %}
-    {% block css %}{% endblock css %}
-
+    {% block extra_head %}{% endblock %}
+    {% block css %}{% endblock %}
 </head>
 <body>
     <header>
@@ -25,26 +23,25 @@
                         <a class="nav-link" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'transaction_list' %}">Transactions</a>
+                        <a class="nav-link" href="{% url 'create_transaction' %}">Create Transaction</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'create_transaction' %}">Create Transaction</a>
+                        <a class="nav-link" href="{% url 'transaction_list' %}">Transactions</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
     <main class="container mt-4">
-        {% block content %}
-        {% endblock %}
+        {% block content %}{% endblock %}
     </main>
-    <footer class="bg-dark text-white text-center py-3">
+    <footer class="bg-dark text-white text-center py-0">
         <p>&copy; 2024 Fraud Detection System. All rights reserved.</p>
+        <p>Contact us at <a href="mailto:support@frauddetection.com" class="text-light">support@frauddetection.com</a></p>
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    {% block extra_js %}
-    {% endblock %}
+    {% block extra_js %}{% endblock %}
 </body>
 </html>
