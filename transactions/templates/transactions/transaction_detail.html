@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}Transaction Detail{% endblock %}
+
 {% block content %}
     <h2>Transaction Detail</h2>
     <p>Transaction ID: {{ transaction.transaction_id }}</p>
@@ -9,12 +10,11 @@
     <p>Merchant: {{ transaction.merchant }}</p>
     <p>Fraud: {{ transaction.is_fraud }}</p>
 
-    {% if transaction.is_fraudulent %}
+    {% if transaction.is_fraud %}
         <div class="alert alert-danger">This transaction has been flagged as potentially fraudulent.</div>
     {% else %}
         <div class="alert alert-success">This transaction is safe.</div>
     {% endif %}
-
 
     <a href="{% url 'transaction_list' %}" class="btn btn-primary">Back to Transactions</a>
 {% endblock %}

@@ -4,4 +4,4 @@ from .models import Transaction
 class TransactionForm(forms.ModelForm):
     class Meta:
         model = Transaction
-        fields = ['amount', 'location', 'merchant']
+        fields = ['transaction_id', 'amount', 'date', 'location', 'merchant']

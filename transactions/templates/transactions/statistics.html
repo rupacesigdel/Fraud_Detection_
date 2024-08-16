@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Transaction Statistics for {{ today }}</h2>
+{% for chart in charts %}
+    <h3>{{ chart.location }}</h3>
+    <img src="data:image/png;base64,{{ chart.image }}" alt="Pie Chart for {{ chart.location }}">
+{% endfor %}
+{% endblock %}

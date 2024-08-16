@@ -12,12 +12,35 @@
 </style>
 {% endblock css %}
 {% block content %}
-<h2>Transaction List</h2>
-<ul>
-    {% for transaction in transactions %}
-        <li>
-            <a href="{% url 'transaction_detail' transaction.pk %}">{{ transaction.transaction_id }}</a> - {{ transaction.amount }}
-        </li>
-    {% endfor %}
-</ul>
+<div class="container">
+  <h2>Transactions</h2>
+  <table class="table table-striped">
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Amount</th>
+              <th>Date</th>
+              <th>Location</th>
+              <th>Merchant</th>
+              <th>Is Fraudulent</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for transaction in transactions %}
+              <tr>
+                  <td>{{ transaction.transaction_id }}</td>
+                  <td>${{ transaction.amount }}</td>
+                  <td>{{ transaction.date }}</td>
+                  <td>{{ transaction.location }}</td>
+                  <td>{{ transaction.merchant }}</td>
+                  <td>{{ transaction.is_fraud }}</td>
+                  <td>
+                      <a href="{% url 'transaction_detail' transaction.pk %}" class="btn btn-primary btn-sm">View</a>
+                  </td>
+              </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+</div>
 {% endblock %}
