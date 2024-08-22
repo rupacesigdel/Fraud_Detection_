@@ -19,7 +19,7 @@ This project is a Django-based fraud detection system that leverages real-time d
 - [Acknowledgments](#acknowledgments)
 
 ## Demo Video
-[Watch the demo video](https://github.com/rupacesigdel/)
+[Watch the demo video](https://github.com/user-attachments/assets/ba81f3ab-272f-4341-9fe1-5262d655b65f)
 
 ## Features
 
