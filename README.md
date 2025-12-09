@@ -7,7 +7,6 @@ This project is a Django-based fraud detection system that leverages real-time d
 ## Contain
 
 - [Features](#features)
-- [Demo Video](#demo-video)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -18,8 +17,6 @@ This project is a Django-based fraud detection system that leverages real-time d
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
 
-## Demo Video
-[Watch the demo video](https://github.com/user-attachments/assets/ba81f3ab-272f-4341-9fe1-5262d655b65f)
 
 ## Features
 
